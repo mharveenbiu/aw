@@ -1,0 +1,514 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta charset = "utf-8"/>
+<title>Diagnostics of Human Body System</title>
+<style type="text/css">
+body{overflow-y: scroll; padding:0; margin:0;background:white;	font-family:Segoe UI;}
+
+
+.footer{
+	height:200px;
+	background:#909090;
+	border:1px solid #CCC;
+	margin:0px auto;
+	bottom:0;
+}
+.footer-cont{
+	display:block;
+	color:white;
+	text-align:center;
+	width:100%;
+}
+.header{
+	height:50px;
+	background:#909090;
+	border:1px solid #CCC;
+	margin:0px auto;
+	top:0;
+	
+}
+.header-cont{
+	display:block;
+	color:white;
+	text-align:center;
+	width:100%; 
+	position:absolute;
+	top:0px;
+	left:0px;
+	border-radius: 15px;
+}
+.content{
+	width: 960px;
+	background:white;
+	border:1px dotted #ccc;
+	height:700px;
+	margin:70px auto;
+}
+.width-content{
+
+}
+.backgroundImage{
+	background-image: url("lab.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 960px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+	margin:0;
+	text-align:center;
+}
+li span{
+    float: left;
+}
+
+a:link,a:visited{
+	display:block;
+	width:120px;
+	background-color:#202020;
+	color:white;
+	text-decoration: none;
+	text-transform:uppercase;
+	padding:20px;
+}
+
+a:hover,a:active{
+	background-color:#505050 ;
+}
+
+img{
+	margin-left: auto;
+    margin-right: auto;
+	display: block;
+}
+span
+{
+	display:block;
+	width:120px;
+	background-color:#202020;
+	color:white;
+	text-decoration: none;
+	text-transform:uppercase;
+	padding:20px;
+}
+p.footer1{
+	font-size: 35px;
+}   
+p.header1{
+	display:block;
+	font-size: 35px;
+	margin:0px auto;
+}   
+span:hover
+{
+	background-color:#505050 ;
+	cursor: pointer;
+	transition-duration: 1s;
+}
+
+#hotspot1 {
+	margin:0px auto;
+	visibility: hidden;
+	position:relative;
+}
+
+#hotspot2 {
+	margin:0px auto;
+    position:relative;
+	visibility: hidden;
+}
+#hotspot3 {
+	margin:0px auto;
+    position:relative;
+	visibility: hidden;
+}
+
+#hotspot4 {
+	margin:0px auto;
+    position:relative;
+	visibility: hidden;
+}
+#hotspot5 {
+	margin:0px auto;
+    position:relative;
+	visibility: hidden;
+}
+
+.hotspot {
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    background-color:#CCC;
+    position:absolute;
+}
+
+.hotspot .text {
+    width:40px;
+    height:40px;
+}
+
+.hotspot .text:hover {
+    cursor:pointer;
+}
+
+.hover-popup,
+.click-popup {
+    display:none;
+    z-index:1;
+}
+
+.hotspot.clicked .click-popup {
+    display:block;
+	padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+
+.hotspot:hover .hover-popup {
+    display:block;
+    position:absolute;
+    left:140%;
+    top:0;
+    width:300px;
+    background-color:#202020;
+	color:white;
+}
+
+
+.fullpop 
+{
+position: relative;
+width: 325px;
+height: 120px;
+padding: 0px;
+background: #FFFFFF;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+
+.hover-popup:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 15px 15px 15px 0;
+border-color: transparent #202020;
+display: block;
+width: 0;
+z-index: 1;
+left: -15px;
+top: 4px;
+}
+
+#list1{
+	
+}
+#list2{
+	
+}
+#list3{
+	
+}
+#list4{
+	
+}
+
+.list li:hover{
+	background-color:#505050 ;
+	transition-duration: 1s;
+	cursor: pointer;
+}
+.changeColor{
+	color:gold;
+	transition-duration: 1s;
+}
+.popup-position{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(0,0,0,0.7);
+	width: 100%;
+	height:100%;
+	z-index:2;
+}
+#popup-wrapper{
+	width: 500px;
+	margin: 70px auto;
+	text-align:left;
+}
+#popup-container{
+	background-color:#fff;
+	padding:20px;
+	border-radius:4px;
+}
+#wrapper{
+	width:960px;
+	margin:40px auto;
+	text-align:left;
+}
+#Popupbox3{
+	width:100%;
+}
+#btn-popup1{
+	display: block;
+    width: 50px;
+	background-color:#202020;
+	color:white;
+	text-decoration: none;
+	text-transform:uppercase;
+	padding:20px;
+}
+#btn-popup2{
+	display: block;
+    width: 50px;
+	background-color:#202020;
+	color:white;
+	text-decoration: none;
+	text-transform:uppercase;
+	padding:20px;
+}
+.btns{
+	display: block;
+	width: 100%;
+}
+
+</style>
+</head>
+<body>
+<script src="bodyparts.js"></script>
+<div id="popup-box1" class="popup-position">
+	<div id="popup-wrapper">
+		<div id="popup-container">
+			<h3 id="Popupbox1"></h3>
+			<div id="PopupCont">
+				<p id="Popupbox2"></p>
+			</div>
+			<img id="Popupbox3"></img>
+			<p id="Popupbox4"></p>
+			<p><span onclick="toggle_visibility('popup-box1');"> Close</p>
+		</div>
+	</div>
+</div>
+<div id="wrapper">
+<div class="header-cont">
+	<div class="header">
+	
+			<p class="header1">Diagnostics of Human Body Systems Diagram</p>
+		
+	</div>
+</div>
+<div class="content">
+	<div class="backgroundImage">
+		<ul>
+			<li><span onclick="changeImage('system/circulatory.png')">Circulatory System</span></li>
+			<li><span onclick="changeImage('system/nervous.png')">Nervous System</span></li>
+			<li><span onclick="changeImage('system/digestive.png')">Digestive System</span></li>
+			<li><span onclick="changeImage('system/muscular.png')">Muscular System</span></li>
+			<li><span onclick="changeImage('system/respiratory.png')">Respiratory System</span></li>
+			<li><span onclick="changeImage('system/skeletal.png')">Skeletal System</span></li>
+		</ul>
+		<img id="imgDisp" src="system\circulatory.png" />
+		<div id="hotspot1" class="hotspot">
+			<div class="text">1</div>
+				<div class="hover-popup">
+						<p id="minor1" class="title"></p>
+						<div class="click-popup">
+						<div class="list">
+							<ul>
+								<li onclick="toggle_visibility('popup-box1');toggle_Descpiption01()">Description</li>
+								<li onclick="toggle_visibility('popup-box1');toggle_Symptoms01();">Symptoms</li>
+								<li onclick="toggle_visibility('popup-box1');toggle_Treatments01();">Treatments</li>
+								<li onclick="toggle_visibility('popup-box1');toggle_Picture01();">Picture</li>			
+							</ul>		
+						</div>
+					</div>
+				</div>
+		</div>
+		
+
+		<div id="hotspot2" class="hotspot">
+			<div class="text">2</div>
+					<div class="hover-popup">
+							<p id="minor2" class="title"></p>
+						<div class="click-popup">
+							<div class="list">
+							<ul>
+								<li onclick="toggle_visibility('popup-box1');toggle_Descpiption02()">Description</li>
+								<li onclick="toggle_visibility('popup-box1')">Symptoms</li>
+								<li onclick="toggle_visibility('list2.3','popup-box1')">Treatments</li>
+								<li onclick="toggle_visibility('list2.4','popup-box1')">Picture</li>									
+							</ul>		
+						</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="hotspot3" class="hotspot">
+			<div class="text">3</div>
+					<div class="hover-popup">
+							<p id="minor3"></p>
+						<div class="click-popup">
+							<div class="list">
+							<ul>
+								<li onclick="toggle_visibility('list3.1','popup-box1')">Description</li>
+								<li onclick="toggle_visibility('list3.2','popup-box1')">Symptoms</li>
+								<li onclick="toggle_visibility('list3.3','popup-box1')">Treatments</li>
+								<li onclick="toggle_visibility('list3.4','popup-box1')">Picture</li>
+							</ul>		
+						</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="hotspot4" class="hotspot">
+			<div class="text">4</div>
+					<div class="hover-popup">
+							<p id="minor2"></p>
+						<div class="click-popup">
+							<div class="list">
+							<ul>
+								<li onclick="toggle_visibility('list4.1','popup-box1')">Description</li>
+								<li onclick="toggle_visibility('list4.2','popup-box1')">Symptoms</li>
+								<li onclick="toggle_visibility('list4.3','popup-box1')">Treatments</li>
+								<li onclick="toggle_visibility('list4.4','popup-box1')">Picture</li>				
+							</ul>		
+						</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="hotspot5" class="hotspot">
+			<div class="text">5</div>
+					<div class="hover-popup">
+							<p id="minor2"></p>
+						<div class="click-popup">
+							<div class="list">
+							<ul>
+								<li id="list1">Description</li>
+								<li id="list2">Symptoms</li>
+								<li id="list3">Treatments</li>
+								<li id="list4">Picture</li>									
+							</ul>		
+						</div>
+				</div>
+			</div>
+		</div> =
+			
+	</div>
+</div>
+<div class="footer">
+	<div class="footer-cont">
+		<p class="footer1">Accessibility { Site Map } Contact me</p>
+		<p class="footer2">Copyright © 2014 J.M. Biu | Privacy Policy | Like us on Facebook</p>
+	</div>
+</div>	
+</div><!-- wrapper //--></!-->
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+<script type="text/javascript">
+    function changeImage(imgName)
+ {
+     image = document.getElementById('imgDisp');
+     image.src = imgName;
+	if (imgName == "system/circulatory.png"){
+	//popup title
+	document.getElementById("minor1").innerHTML = circulatory_system.diseases.minor1.name;
+	document.getElementById("minor2").innerHTML = circulatory_system.diseases.minor2.name;
+
+	 //document.getElementById("minor1").innerHTML = circulatory_system.diseases.minor1.description;
+	 console.log(document.getElementById("minor1").innerHTML);
+	 console.log(document.getElementById("minor2").innerHTML);
+	 //positions
+	 document.getElementById("hotspot1").style.left = "20px";
+	 document.getElementById("hotspot1").style.top = "-150px";
+	 document.getElementById("hotspot2").style.left = "20px";
+	 document.getElementById("hotspot2").style.top = "-600px";
+	 document.getElementById("hotspot3").style.left = "20px";
+	 document.getElementById("hotspot3").style.top = "-600px";
+	 document.getElementById("hotspot4").style.left = "20px";
+	 document.getElementById("hotspot4").style.top = "-600px";
+	 document.getElementById("hotspot5").style.left = "20px";
+	 document.getElementById("hotspot5").style.top = "-600px";
+	 //visibilities
+	document.getElementById("hotspot1").style.visibility = "visible";
+	document.getElementById("hotspot2").style.visibility = "visible";
+	document.getElementById("hotspot3").style.visibility = "visible";
+	document.getElementById("hotspot4").style.visibility = "visible";
+	document.getElementById("hotspot5").style.visibility = "visible";
+	}else{
+	document.getElementById("hotspot1").style.visibility = "hidden";
+	document.getElementById("hotspot2").style.visibility = "hidden";
+	document.getElementById("hotspot3").style.visibility = "hidden";
+	document.getElementById("hotspot4").style.visibility = "hidden";
+	document.getElementById("hotspot5").style.visibility = "hidden";
+	};
+	
+  $(document).ready(function () {
+ 
+	$('.list li').hover(function() {
+      $(this).toggleClass('changeColor');
+	});	
+   	    $('.hotspot').click(function () {
+	$(this).toggleClass('clicked');
+		});
+	});
+}
+
+
+
+ 
+  
+function toggle_visibility(id) {
+
+
+ 
+       if(document.getElementById(id).style.display == 'block'){
+          document.getElementById(id).style.display = 'none';
+       }else{
+         document.getElementById(id).style.display = 'block';
+  		};
+
+		
+ }
+
+
+ function toggle_Descpiption01(){
+ 		if (document.getElementById("minor1").innerHTML == circulatory_system.diseases.minor1.name){
+		//console.log(document.getElementById("minor1").innerHTML);
+		document.getElementById("Popupbox1").innerHTML = circulatory_system.diseases.minor1.name;
+		document.getElementById("Popupbox2").innerHTML = circulatory_system.diseases.minor1.description;
+		document.getElementById("Popupbox3").src = circulatory_system.diseases.minor1.picture;
+		};
+ }
+  function toggle_Descpiption02(){
+ 		if (document.getElementById("minor2").innerHTML == circulatory_system.diseases.minor2.name){
+		
+		document.getElementById("Popupbox1").innerHTML = circulatory_system.diseases.minor2.name;
+		document.getElementById("Popupbox2").innerHTML = circulatory_system.diseases.minor2.description;
+		document.getElementById("Popupbox3").src = circulatory_system.diseases.minor2.picture[0];
+		};
+ }
+   function toggle_Symptoms01(){
+ 		if (document.getElementById("minor1").innerHTML == circulatory_system.diseases.minor1.name){
+		
+		document.getElementById("Popupbox1").innerHTML = ("Symptoms");
+		for (i = 0; i < circulatory_system.diseases.minor1.symptoms.length; i++) { 
+   			//text += cars[i] + "<br>";
+			var para = document.createElement("p");
+			var node = document.createTextNode(circulatory_system.diseases.minor1.symptoms[i]);
+			para.appendChild(node);
+			var element = document.getElementById("PopupCont");
+			element.appendChild(para);
+			}
+		};
+ }
+</script>
+</body>
+</html>
+</!DOCTYPE>
